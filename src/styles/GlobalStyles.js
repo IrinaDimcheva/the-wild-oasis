@@ -143,6 +143,20 @@ img {
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  margin-block: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-grey-400);
+  background-clip: content-box;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
 /*
 FOR DARK MODE
 
