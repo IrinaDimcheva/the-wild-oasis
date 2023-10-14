@@ -8,10 +8,16 @@ export async function getBookings({ filter, sortBy }) {
       'id, created_at, startDate, endDate, numNights, numGuests, status, totalPrice, cabins(name), guests(fullName, email)'
     );
 
-  if (filter !== null) {
+  if (filter) {
     query = query[filter.method || 'eq'](filter.field, filter.value);
     // With array of filters
     // query = filter.map(f => query[f.method || 'eq'](f.field, f.value))[0];
+  }
+
+  if (sortBy) {
+    query = query.order(sortBy.field, {
+      ascending: sortBy.direction === 'asc'
+    });
   }
 
   const { data, error } = await query;
