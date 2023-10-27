@@ -13,8 +13,8 @@ import Spinner from '../../ui/Spinner';
 import FullPage from '../../ui/FullPage';
 
 function LoginForm() {
-  const [email, setEmail] = useState('irina@example.com');
-  const [password, setPassword] = useState('irina123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { login, isLoading } = useLogin();
   const { isAuthenticated, isLoading: isLoadingAuth } = useUser();
   const navigate = useNavigate();
